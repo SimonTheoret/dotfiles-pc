@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = main
+	templatedir = /home/simon/.git-templates
+[user]
+	email = simonteoret@hotmail.com
+	name = SimonTheoret
+[credential]
+	helper = store
