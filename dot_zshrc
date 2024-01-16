@@ -51,7 +51,7 @@ export PATH="/home/simon/.cargo/bin:/home/simon/.local/bin/:/home/simon/bin:/hom
 # Zoxide "init"
 eval "$(zoxide init zsh)"
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # Zsh syntax hl
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
