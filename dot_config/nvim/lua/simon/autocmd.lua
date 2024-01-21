@@ -28,5 +28,10 @@ vim.api.nvim_create_autocmd({ "BufRead"}, {
 --                 print("not in a norg/ md file")
 --             end
 --         end
---     end
--- })
+--     end })
+vim.api.nvim_create_autocmd({"BufNewFile"},{
+    pattern = {".sh"},
+    callback = function(_)
+        vim.api.nvim_buf_set_lines(0, 0, 0, true, {"#!/usr/bin/env sh"})
+    end
+})
