@@ -1,16 +1,21 @@
 -- List of autocommands
 
 -- Fold all when opening neorg file
-vim.api.nvim_create_autocmd({ "BufRead"}, {
+vim.api.nvim_create_autocmd({ "BufRead" }, {
     pattern = { "*" },
     callback = function(_)
         if vim.bo.filetype == "norg" then
-            vim.o.foldlevel = 0 -- Close all folds if norg file
-            -- vim.opt.textwidth = 88
+            vim.o.foldlevel = 0  -- Close all folds if norg file
         else
             vim.o.foldlevel = 99 -- Open all files if anything else
-            -- vim.opt.textwidth = 0
         end
+    end
+})
+
+vim.api.nvim_create_autocmd({ "BufRead" }, {
+    pattern = { "*.norg" },
+    callback = function(_)
+        vim.api.nvim_buf_set_keymap(0, "n", "<tab>", "za", {desc = "Toggle fold"})
     end
 })
 --
@@ -29,9 +34,9 @@ vim.api.nvim_create_autocmd({ "BufRead"}, {
 --             end
 --         end
 --     end })
-vim.api.nvim_create_autocmd({"BufNewFile"},{
-    pattern = {".sh"},
+vim.api.nvim_create_autocmd({ "BufNewFile" }, {
+    pattern = { "*.sh" },
     callback = function(_)
-        vim.api.nvim_buf_set_lines(0, 0, 0, true, {"#!/usr/bin/env sh"})
+        vim.api.nvim_buf_set_lines(0, 0, 0, true, { "#!/usr/bin/env sh" })
     end
 })

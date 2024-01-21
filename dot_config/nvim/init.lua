@@ -33,6 +33,8 @@ vim.opt.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.filetype = true
+
 
 vim.opt.swapfile = false
 vim.opt.backup = false
