@@ -11,12 +11,12 @@
 --     vim.cmd[[colorscheme catppuccin-mocha]]
 -- end}
 return {
- "loctvl842/monokai-pro.nvim",
- config = function()
-   require("monokai-pro").setup({
-    filter = "spectrum",
-    background_clear = {}
-   })
-    vim.cmd[[colorscheme monokai-pro]]
- end
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+        require("monokai-pro").setup({
+            filter = "spectrum",
+            background_clear = {},
+        })
+        vim.cmd [[colorscheme monokai-pro]]
+    end
 }
