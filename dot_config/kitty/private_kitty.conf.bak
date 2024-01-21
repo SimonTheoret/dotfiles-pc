@@ -2396,9 +2396,3 @@ map kitty_mod+alt+t set_tab_title
 #: }}}
 
 #: }}}
-
-
-# BEGIN_KITTY_THEME
-# Molokai
-include current-theme.conf
-# END_KITTY_THEME
