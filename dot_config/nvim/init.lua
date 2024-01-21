@@ -26,6 +26,7 @@ vim.opt.nu = true
 vim.opt.textwidth = 88
 vim.opt.autoindent = true
 vim.opt.formatoptions = "tcqjron"
+vim.opt.clipboard = "unnamedplus"
 
 
 vim.opt.incsearch = true
