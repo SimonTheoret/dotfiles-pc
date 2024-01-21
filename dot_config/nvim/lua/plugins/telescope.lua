@@ -4,7 +4,11 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
         local t = require("telescope")
-        t.setup({})
+        t.setup({
+            defaults = {
+                borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
+            }
+        })
         require("telescope").load_extension('zoxide')
         require('telescope').load_extension('projects')
     end,
@@ -75,7 +79,7 @@ return {
                     search_dirs =
                     { path }
                 })
-                vim.cmd("lcd ~/org/notes")     -- Locally changes dir
+                vim.cmd("lcd ~/org/notes") -- Locally changes dir
             end,
             desc = "Telescope find notes"
         },

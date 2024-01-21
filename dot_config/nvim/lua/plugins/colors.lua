@@ -7,15 +7,16 @@
 --     vim.cmd[[colorscheme tokyonight]]
 --   end
 -- }
-return { "catppuccin/nvim", name = "catppuccin", priority = 1000, config = function ()
-    vim.cmd[[colorscheme catppuccin-mocha]]
-end}
--- return {
---  "loctvl842/monokai-pro.nvim",
---  config = function()
---    require("monokai-pro").setup({
---     filter = "pro",
---     vim.cmd[[colorscheme monokai-pro]]
---    })
---  end
--- }
+-- return { "catppuccin/nvim", name = "catppuccin", priority = 1000, config = function ()
+--     vim.cmd[[colorscheme catppuccin-mocha]]
+-- end}
+return {
+ "loctvl842/monokai-pro.nvim",
+ config = function()
+   require("monokai-pro").setup({
+    filter = "spectrum",
+    background_clear = {}
+   })
+    vim.cmd[[colorscheme monokai-pro]]
+ end
+}
