@@ -34,6 +34,7 @@ alias chrome='google-chrome-stable'
 alias zel='zellij'
 alias jos='joshuto'
 alias cm='chezmoi'
+alias icat='kitten icat'
 
 # Visual and editor variables:
 export VISUAL=nvim
