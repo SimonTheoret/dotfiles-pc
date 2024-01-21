@@ -35,6 +35,7 @@ alias zel='zellij'
 alias jos='joshuto'
 alias cm='chezmoi'
 alias icat='kitten icat'
+alias kdiff='kitten diff'
 
 # Visual and editor variables:
 export VISUAL=nvim
