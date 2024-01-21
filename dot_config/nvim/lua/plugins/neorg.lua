@@ -17,7 +17,7 @@ return {
                         default_workspace = "notes",
                     },
                 },
-                ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
+                ["core.completion"] = { config = { engine = "nvim-cmp"} },
                 ["core.manoeuvre"] = {},
                 ["core.summary"] = {},
                 ["core.integrations.telescope"] = {},
