@@ -15,7 +15,7 @@ return {
     config = function()
         require("monokai-pro").setup({
             filter = "spectrum",
-            background_clear = {},
+            background_clear = {"neo-tree",},
         })
         vim.cmd [[colorscheme monokai-pro]]
     end
