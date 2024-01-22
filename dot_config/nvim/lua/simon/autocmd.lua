@@ -5,11 +5,13 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
     pattern = { "*" },
     callback = function(_)
         if vim.bo.filetype == "norg" or vim.bo.filetype == "markdown" then
+            print("this is a norg file")
             vim.o.foldlevel = 0 -- Close all folds if norg file
             vim.opt.textwidth = 80
         else
             vim.o.foldlevel = 99 -- Open all folds if not norg or markdown else
             vim.opt.textwidth = 0
+            print("this is not a norg file")
         end
     end
 })
