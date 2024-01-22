@@ -12,12 +12,12 @@ return {
         neogit.setup{
             mappings = {
                 commit_editor = {
-                    ["<localleader>c<localleader>c"] = "Submit",
-                    ["<localleader>c<localleader>k"] = "Abort"
+                    ["<localleader>c"] = "Submit",
+                    ["<localleader>k"] = "Abort"
                 },
                 rebase_editor = {
-                    ["<localleader>c<localleader>c"] = "Submit",
-                    ["<localleader>c<localleader>k"] = "Abort"
+                    ["<localleader>c"] = "Submit",
+                    ["<localleader>k"] = "Abort"
                 },
             }
     }
