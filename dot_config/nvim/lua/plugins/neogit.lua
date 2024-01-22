@@ -12,8 +12,18 @@ return {
     keys = {
         {
             "<leader>g/",
-            ":Neogit<CR>",
+            function ()
+                require('neogit').open()
+            end,
             desc = "Neogit"
         },
+        {
+            "<leader>gc",
+            function()
+                require('neogit').open({"commit"})
+            end,
+            desc= "Neogit commit"
+
+        }
     }
 }
