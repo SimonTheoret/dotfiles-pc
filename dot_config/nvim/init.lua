@@ -13,7 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath) -- do not touch
 vim.g.mapleader = " " -- leader key
-vim.g.maplocalleader = " " -- local leader key
+vim.g.maplocalleader = "m" -- local leader key
 
 vim.opt.relativenumber = true --relative numbers
 vim.opt.tabstop = 4
