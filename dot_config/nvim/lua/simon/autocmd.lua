@@ -4,12 +4,10 @@
 vim.api.nvim_create_autocmd({ "BufRead" }, {
     pattern = { "*" },
     callback = function(_)
-        if vim.bo.filetype == "norg" or vim.bo.filetype == "markdown" then
-            vim.o.foldlevel = 0 -- Close all folds if norg file
-            vim.opt.textwidth = 80
+        if vim.bo.filetype == "norg" then
+            vim.o.foldlevel = 0  -- Close all folds if norg file
         else
             vim.o.foldlevel = 99 -- Open all files if anything else
-            vim.opt.textwidth = 0
         end
     end
 })
@@ -17,7 +15,7 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 vim.api.nvim_create_autocmd({ "BufRead" }, {
     pattern = { "*.norg" },
     callback = function(_)
-        vim.api.nvim_buf_set_keymap(0, "n", "<tab>", "za", { desc = "Toggle fold" })
+        vim.api.nvim_buf_set_keymap(0, "n", "<tab>", "za", {desc = "Toggle fold"})
     end
 })
 --
