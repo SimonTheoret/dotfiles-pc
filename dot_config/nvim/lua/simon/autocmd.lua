@@ -1,25 +1,12 @@
 -- List of autocommands
 
--- Fold all when opening neorg file
--- vim.api.nvim_create_autocmd({ "BufRead" }, {
---     pattern = { "*" },
---     callback = function(_)
---         if vim.bo.filetype == "norg" or vim.bo.filetype == "markdown" then
---             print("this is a norg file")
---         else
---             vim.o.foldlevel = 99 -- Open all folds if not norg or markdown else
---             vim.opt.textwidth = 0
---             print("this is not a norg file")
---         end
---     end
--- })
 
 vim.api.nvim_create_autocmd({ "BufRead" }, {
     pattern = { "*.norg" },
     callback = function(_)
         vim.api.nvim_buf_set_keymap(0, "n", "<tab>", "za", { desc = "Toggle fold" }) -- cute remap for neorg
-        vim.opt_local.foldlevel = 0
-        vim.opt_local.textwidth = 80
+        vim.bo.textwidth = 80
+        vim.opt.foldlevel = 0
     end
 })
 --
