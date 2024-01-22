@@ -6,7 +6,6 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
     callback = function(_)
         vim.api.nvim_buf_set_keymap(0, "n", "<tab>", "za", { desc = "Toggle fold" }) -- cute remap for neorg
         vim.bo.textwidth = 80
-        vim.opt.foldlevel = 0
     end
 })
 --

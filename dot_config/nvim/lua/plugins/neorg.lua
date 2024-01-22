@@ -16,6 +16,7 @@ return {
                         },
                         default_workspace = "notes",
                     },
+                    index = "index.norg"
                 },
                 ["core.completion"] = { config = { engine = "nvim-cmp"} },
                 ["core.manoeuvre"] = {},
@@ -69,5 +70,6 @@ return {
             desc = "Create new notes"
         },
         { "<leader>nfi", ":Neorg index<CR> :cd %:h<CR>", desc = "Go to notes index" },
+        {"<leader><localleader>t", ":Neorg toc<CR>", desc = "Table of content"},
     }
 }
