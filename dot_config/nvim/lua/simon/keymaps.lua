@@ -37,6 +37,8 @@ vmap.set("n", "<tab>", "%", { desc = "Switch delimiters" })
 
 vmap.set("n", "<leader>cc", function() require("simon.compilua").compilua() end, {desc = "Fast compile"})
 
+vmap.set("n", "<leader>sr", function() require("simon.neosearch").search() end, {desc = "Search and replace"})
+
 function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
