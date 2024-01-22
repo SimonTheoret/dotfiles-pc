@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
             vim.o.foldlevel = 0 -- Close all folds if norg file
             vim.opt.textwidth = 80
         else
-            vim.o.foldlevel = 99 -- Open all files if anything else
+            vim.o.foldlevel = 99 -- Open all folds if not norg or markdown else
             vim.opt.textwidth = 0
         end
     end
