@@ -1,11 +1,11 @@
 return {
     'jbyuki/nabla.nvim',
-    config = true,
+    config = false,
     keys = {
         {
             "<leader>kj",
             function()
-                require("nabla").popup()
+                require("nabla").popup({border = 'single'})
             end,
             desc = "Show latex"
         }

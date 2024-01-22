@@ -31,5 +31,4 @@ return {
             desc = "Neogit"
         },
     },
-    lazy = false,
 }
