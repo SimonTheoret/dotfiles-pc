@@ -23,9 +23,9 @@ vim.opt.smarttab = true
 vim.opt.expandtab = true
 -- vim.opt.smartindent = true
 vim.opt.nu = true
-vim.opt.textwidth = 0
+vim.opt.textwidth = 88
 vim.opt.autoindent = true
-vim.opt.formatoptions = "tcqjron"
+vim.opt.formatoptions = "tcqjrona"
 vim.opt.clipboard = "unnamedplus"
 
 
