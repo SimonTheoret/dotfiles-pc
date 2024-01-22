@@ -8,7 +8,21 @@ return {
         "nvim-telescope/telescope.nvim", -- optional
         "ibhagwan/fzf-lua",          -- optional
     },
-    config = true,
+    config = function ()
+        local neogit = require("neogit")
+        neogit.setup{
+            mappings = {
+                commit_editor = {
+                    ["<localleader>c<localleader>c"] = "Submit",
+                    ["<localleader>c<localleader>k"] = "Abort"
+                },
+                rebase_editor = {
+                    ["<localleader>c<localleader>c"] = "Submit",
+                    ["<localleader>c<localleader>k"] = "Abort"
+                },
+            }
+    }
+    end,
     keys = {
         {
             "<leader>g/",
