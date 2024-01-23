@@ -36,7 +36,7 @@ vim.o.smartcase = true
 
 vim.o.filetype = true
 
-vim.o.conceallevel = 3
+vim.o.conceallevel = 2
 
 vim.opt.swapfile = false
 vim.opt.backup = false
