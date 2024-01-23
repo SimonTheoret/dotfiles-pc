@@ -47,7 +47,7 @@ return {
         end)
 
         vim.wo.foldlevel = 99
-        vim.wo.conceallevel = 2
+        vim.wo.conceallevel = 3
     end,
     lazy = true,
     ft = "norg",
