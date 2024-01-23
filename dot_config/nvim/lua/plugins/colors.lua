@@ -18,5 +18,7 @@ return {
             background_clear = {"neo-tree","float_win"},
         })
         vim.cmd [[colorscheme monokai-pro]]
-    end
+    end,
+    priority = 1000,
+    lazy = false
 }
