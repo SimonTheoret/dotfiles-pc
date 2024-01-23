@@ -1,0 +1,6 @@
+# Might want change the hostname for future new machines
+{{- if eq .chezmoi.hostname "laptop" }}
+# Autorandr
+**/autorandr/
+**/autorandr/**
+{{- end }}

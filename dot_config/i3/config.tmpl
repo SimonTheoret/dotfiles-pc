@@ -232,5 +232,15 @@ bar {
         status_command i3status
 }
 
+{{ if eq .chezmoi.hostname "laptop" }}
+# Backlight control
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 # decrease screen brightness darwin
 
+# touchpad
+exec_always --no-startup-id xinput set-prop "SYNA2B31:00 06CB:CD3E Touchpad" "libinput Tapping Enabled" 1
+
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+
+{{end}}
 

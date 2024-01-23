@@ -1,7 +1,0 @@
-autotiling
-dockfmt
-flashfocus-git
-google-chrome
-joshuto
-wordnet-cli
-yay
