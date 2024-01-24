@@ -28,7 +28,7 @@ return {
     priority = 1000,
     config = function()
         vim.opt.termguicolors = true
-        vim.g.sonokai_style = "andromeda"
+        vim.g.sonokai_style = "atlantis"
         vim.g.sonokai_float_style = "dim"
         vim.g.sonokai_better_performance = true
         vim.g.sonokai_enable_italic = true
