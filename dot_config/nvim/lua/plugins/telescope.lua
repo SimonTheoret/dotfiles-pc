@@ -4,13 +4,13 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
         local t = require("telescope")
-        t.setup({
-            defaults = {
-                borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
-            }
-        })
-        require("telescope").load_extension('zoxide')
-        require('telescope').load_extension('projects')
+        -- t.setup({
+        --     defaults = {
+        --         borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
+        --     }
+        -- })
+        t.load_extension('zoxide')
+        t.load_extension('projects')
     end,
     keys = {
         {

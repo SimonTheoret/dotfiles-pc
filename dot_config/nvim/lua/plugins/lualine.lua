@@ -5,7 +5,7 @@ return {
         require('lualine').setup {
             options = {
                 -- ...
-                theme = 'monokai-pro'
+                theme = 'sonokai'
                 -- ...
             }
         }
