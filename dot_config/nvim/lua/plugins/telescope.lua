@@ -15,7 +15,7 @@ return {
     keys = {
         {
             '<leader><leader>',
-            function() require('telescope.builtin').find_files() end,
+            function() require('telescope.builtin').find_files({follow = true}) end,
             desc = "Telescope find files"
         },
 
