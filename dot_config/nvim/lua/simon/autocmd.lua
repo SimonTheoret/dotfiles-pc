@@ -15,6 +15,14 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
         vim.bo.textwidth = 80
     end
 })
+vim.api.nvim_create_autocmd({"BufRead"}, {
+    pattern = {"*.norg"},
+    callback = function(_)
+        vim.wo.foldlevel = 99
+        vim.wo.conceallevel = 2
+    end
+
+})
 --
 -- Wraps lines of more then 80 characters in .norg, .md  files
 -- vim.api.nvim_create_autocmd({"BufRead"}, {
