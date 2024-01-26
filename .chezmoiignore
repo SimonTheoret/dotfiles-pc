@@ -4,3 +4,4 @@
 **/autorandr/
 **/autorandr/**
 {{- end }}
+lazy-lock.json
