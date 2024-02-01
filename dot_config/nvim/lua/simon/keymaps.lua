@@ -51,3 +51,5 @@ end
 
 vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
 vmap.set("n", "<leader>cln", [[:%s/\s\+$//e<cr>]], {desc = "Clean trailing whitespaces"})
+
+-- Git signs
