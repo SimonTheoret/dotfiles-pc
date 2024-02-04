@@ -23,6 +23,11 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; font
+;; (set-frame-font "JetBrainsMono Nerd Font Mono 100" nil t)
+(set-face-attribute 'default t :font "JetBrainsMono Nerd Font Mono-10" )
+
+
 ;; Display relative line numbers in every buffer
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers 'relative)
@@ -123,7 +128,7 @@
   ;; (setq vertico-scroll-margin 0)
 
   ;; Show more candidates
-  ;; (setq vertico-count 20)
+  (setq vertico-count 15)
 
   ;; Grow and shrink the Vertico minibuffer
   ;; (setq vertico-resize t)
