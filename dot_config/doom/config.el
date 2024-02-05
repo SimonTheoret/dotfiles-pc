@@ -42,6 +42,10 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 (setq org-agenda-files '("~/org/agenda"))
+
+;; Line wrap
+(toggle-text-mode-auto-fill)
+
 ;;
 ;; Set delay forshowing the which-key and commands
 (after! which-key
@@ -56,7 +60,9 @@
 (add-to-list '+lsp-company-backends 'company-files)
 
 ;; Font increment for doom
-(after! doom (setq doom-font-increment 1))
+(after! doom
+  (setq doom-font-increment 1)
+  (setq doom-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 12 :weight 'medium)))
 ;; Default web browser
 (setq browse-url-browser-function 'browse-url-generic)
 (setq browse-url-generic-program "google-chrome-stable")
