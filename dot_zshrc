@@ -56,7 +56,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 
 # Add to path:
-export PATH="/home/simon/.cargo/bin:/home/simon/.local/bin/:/home/simon/bin:/home/simon/.config/emacs/bin:/home/simon/go/bin:$HOME/.gem/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH"
+export PATH="/home/simon/.cargo/bin:/home/simon/.local/bin/:/home/simon/bin:/home/simon/.config/emacs/bin:/home/simon/go/bin:$HOME/.gem/bin:$HOME/.gem/ruby/3.0.0/bin:~/config/emacs/bin:$PATH"
 # Zoxide "init"
 eval "$(zoxide init zsh)"
 
