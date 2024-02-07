@@ -5,3 +5,5 @@
 **/autorandr/**
 {{- end }}
 lazy-lock.json
+*el~
+*elc
