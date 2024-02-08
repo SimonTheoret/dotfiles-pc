@@ -17,3 +17,6 @@
   :bind
   (:map dired-mode-map
               ("C-c C-x" . dired-rsync-transient)))
+
+(use-package dirvish)
+(dirvish-override-dired-mode)

@@ -9,7 +9,8 @@
 
 ;; font
 ;; (set-frame-font "JetBrainsMono Nerd Font Mono 100" nil t)
-(set-face-attribute 'default t :font "JetBrainsMono Nerd Font Mono-10" )
+(add-to-list 'default-frame-alist
+	     '(font . "FiraCode Nerd Font-10"))
 
 ;; Scrolling
 (pixel-scroll-mode 1)

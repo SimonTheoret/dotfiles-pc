@@ -21,17 +21,23 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
-(use-package all-the-icons
-  :if (display-graphic-p))
+;; (use-package all-the-icons
+;;   :if (display-graphic-p))
 
-(use-package all-the-icons-completion
-  :init
-  (all-the-icons-completion-mode)
-  (add-hook 'marginalia-mode-hook #'all-the-icons-completion-marginalia-setup))
+;; (use-package all-the-icons-completion
+;;   :init
+;;   (all-the-icons-completion-mode)
+;;   (add-hook 'marginalia-mode-hook #'all-the-icons-completion-marginalia-setup))
 
-(use-package all-the-icons-dired
-  :after all-the-icons
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+;; (use-package all-the-icons-dired
+;;   :after all-the-icons
+;;   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+
+(use-package nerd-icons)
+(use-package nerd-icons-dired
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
+
 
 ;; THe essential modeline
 (use-package doom-modeline
@@ -52,3 +58,29 @@
 (use-package rainbow-delimiters
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
+(use-package nerd-icons-ibuffer
+  :ensure t
+  :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
+
+(use-package nerd-icons-completion
+  :after marginalia
+  :config
+  (nerd-icons-completion-mode)
+  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+
+
+(use-package ligature
+  :config
+  (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+                                       ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+                                       "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+                                       "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+                                       "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+                                       "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+                                       "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+                                       "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+                                       "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+                                       "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+  
+  (global-ligature-mode 't))

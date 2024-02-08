@@ -2,9 +2,8 @@
 
 ;; Tree-sitter
 (use-package tree-sitter
-  :defer t
-  :config
-  (require 'tree-sitter-langs)
+  :init
+  (require 'tree-sitter))
 
 (use-package tree-sitter-langs
   :after tree-sitter)

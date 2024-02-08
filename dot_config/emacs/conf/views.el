@@ -13,3 +13,5 @@
   :straight (:host sourcehut :repo "woozong/perspective-tabs")
   :init
   (perspective-tabs-mode +1))
+
+

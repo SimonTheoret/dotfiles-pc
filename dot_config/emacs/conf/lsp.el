@@ -1,4 +1,3 @@
-
 (defun dotfiles--lsp-deferred-if-supported ()
   "Run `lsp-deferred' if it's a supported mode."
   (unless (derived-mode-p 'emacs-lisp-mode)
@@ -22,3 +21,5 @@
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq lsp-use-plists t)
+
+;; (evil-global-set-k )

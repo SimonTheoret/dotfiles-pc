@@ -68,6 +68,7 @@
 (evil-global-set-key 'normal (kbd "<leader> n l") #'org-store-link)
 (evil-global-set-key 'normal (kbd "<leader> n a") #'org-agenda)
 (evil-global-set-key 'normal (kbd "<leader> n c") #'org-capture)
+(evil-global-set-key 'normal (kbd "<leader> s g") 'lgrep)
 
 
 (use-package which-key
