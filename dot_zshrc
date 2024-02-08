@@ -42,6 +42,7 @@ alias gitg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias gita="git add"
 alias gitc="git commit -m"
 alias gits="git status"
+alias gitp="git push"
 
 
 # Visual and editor variables:
