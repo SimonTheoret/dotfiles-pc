@@ -46,8 +46,8 @@ alias gitp="git push"
 
 
 # Visual and editor variables:
-export VISUAL=emacs -nw
-export EDITOR=emacs -nw
+export VISUAL='emacs -nw'
+export EDITOR='emacs -nw'
 
 #ruby :(
 export GEM_HOME="$HOME/.gem"
