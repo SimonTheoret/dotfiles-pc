@@ -32,3 +32,5 @@
 
 ;; Nice greek symbols
 (global-prettify-symbols-mode)
+
+

@@ -32,6 +32,7 @@
 
 (setq
  ;; Edit settings
+ org-return-follows-link t
  org-auto-align-tags nil
  org-tags-column 0
  org-catch-invisible-edits 'show-and-error
@@ -41,7 +42,8 @@
  ;; Org styling, hide markup etc.
  org-hide-emphasis-markers t
  org-pretty-entities t
- org-ellipsis "…"
+ ;;org-ellipsis "…"
+ org-ellipsis " "
 
  ;; Agenda styling
  org-agenda-tags-column 0
@@ -55,6 +57,8 @@
 
 ;; Pretty indenting
 (add-hook 'org-mode-hook 'org-indent-mode)
+
+		 
 
 ;; org roam v2 
 (use-package org-roam
@@ -76,5 +80,5 @@
 
 ;; Org mode starts folded
 (setq org-hide-block-startup t)
-(setq org-startup-folded "show1level")
+(setq org-startup-folded t) ;; sets folding to overview (by setting t)
 

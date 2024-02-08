@@ -6,12 +6,22 @@
 (use-package lsp-mode
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (prog-mode . dotfiles--lsp-deferred-if-supported)
+         (python-mode . lsp)
          ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands (lsp dotfiles--lsp-deferred-if-supported))
+         (lsp-mode . lsp-enable-which-key-integration)
+	 )
+  :commands lsp)
+
+(with-eval-after-load 'lsp-mode
+  ;; :global/:workspace/:file
+  (lsp-modeline-code-actions-mode)
+  (lsp-headerline-breadcrumb-mode)
+  (setq lsp-modeline-diagnostics-enable t
+  (setq lsp-modeline-diagnostics-scope :workspace))
+
+
+(use-package all-the-icons)
 
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode)
@@ -22,4 +32,11 @@
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq lsp-use-plists t)
 
-;; (evil-global-set-k )
+(evil-global-set-key 'normal (kbd "K") 'lsp-find-definition )
+(evil-global-set-key 'normal (kbd "g r") 'lsp-find-references )
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred

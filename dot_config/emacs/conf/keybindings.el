@@ -79,3 +79,7 @@
 (defun search-emacs-dir ()
   (interactive)
   (ido-find-file-in-dir user-emacs-directory))
+
+;; combine evil join and evil fill and move
+;; (defun join-and-fill ()
+;;   (evil-join))
