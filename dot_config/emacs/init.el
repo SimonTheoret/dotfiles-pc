@@ -24,6 +24,5 @@
 (config-load-file-no-extension "emacslisp") 
 (config-load-file-no-extension "views") 
 (config-load-file-no-extension "projectsman") 
-
-
-
+(config-load-file-no-extension "git") 
+(config-load-file-no-extension "buffers") 
