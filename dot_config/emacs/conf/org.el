@@ -53,6 +53,9 @@
  org-agenda-current-time-string
  "◀── now ─────────────────────────────────────────────────")
 
+;; Pretty indenting
+(add-hook 'org-mode-hook 'org-indent-mode)
+
 ;; org roam v2 
 (use-package org-roam
   :custom
@@ -71,6 +74,7 @@
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
 
-(setq org-hide-block-startup t
-      org-startup-folded "fold")
+;; Org mode starts folded
+(setq org-hide-block-startup t)
+(setq org-startup-folded "show1level")
 
