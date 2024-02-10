@@ -21,3 +21,8 @@
 (use-package straight
   :custom
   (straight-use-package-by-default t))
+
+;; General magic!
+(use-package general
+  :config
+  (general-evil-setup t))
