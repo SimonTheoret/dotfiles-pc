@@ -1,7 +1,7 @@
 ;; Elisp go def
-(use-package elisp-def)
-(dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
-  (add-hook hook #'elisp-def-mode))
+(use-package elisp-def
+  :hook
+  ((hook . elisp-def-mode)))
 
 (use-package highlight-quoted
   :hook

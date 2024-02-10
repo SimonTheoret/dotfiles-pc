@@ -1,5 +1,4 @@
 ;; Keybindings
-;; Future addition: (https://github.com/noctuid/general.el)
 
 (use-package evil
   :init
@@ -23,26 +22,20 @@
   (evil-collection-init))
 
 (use-package evil-surround
- :after evil
- :config
- (global-evil-surround-mode 1))
+  :after evil
+  :config
+  (global-evil-surround-mode 1))
 
 (use-package evil-args
   :after evil
-  :config
-  ;; bind evil-args text objects
-  (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
-  (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
-
-  ;; bind evil-forward/backward-args
-  (define-key evil-normal-state-map "L" 'evil-forward-arg)
-  (define-key evil-normal-state-map "H" 'evil-backward-arg)
-  (define-key evil-motion-state-map "L" 'evil-forward-arg)
-  (define-key evil-motion-state-map "H" 'evil-backward-arg)
-
-
-  ;; bind evil-jump-out-args
-  (define-key evil-normal-state-map "K" 'evil-jump-out-args))
+  :general-config
+  (:states 'normal
+	    "L" '("Next arg" . evil-forward-arg )
+	    "H" '("Previous arg" . evil-backward-arg )
+	    "K" '("Out of args" . evil-jump-out-args ))
+  (:states 'motion
+	    "L" '("Next arg" . evil-forward-arg )
+	    "H" '("Previous arg" . evil-backward-arg )))
 
 (use-package evil-easymotion
   :after evil)
@@ -55,30 +48,27 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
-;; treemacs keybindings
-(use-package treemacs-evil
-  :after (treemacs evil))
-;; Generic keymaps
-(evil-global-set-key 'normal (kbd "<leader> f f") 'ido-find-file)
-(evil-global-set-key 'normal (kbd "<leader> f p") 'search-emacs-dir )
-(evil-global-set-key 'normal (kbd "<leader> c c") 'compile)
-(evil-global-set-key 'normal (kbd "<leader> c r") 'recompile)
-(evil-global-set-key 'normal (kbd "TAB") 'evil-jump-item) 
-
-(evil-global-set-key 'normal (kbd "<leader> n l") #'org-store-link)
-(evil-global-set-key 'normal (kbd "<leader> n a") #'org-agenda)
-(evil-global-set-key 'normal (kbd "<leader> n c") #'org-capture)
-(evil-global-set-key 'normal (kbd "<leader> s g") 'lgrep)
-
 
 (use-package which-key
   :config
   (which-key-mode)
   (setq which-key-idle-delay 0.2))
 
-(defun search-emacs-dir ()
-  (interactive)
-  (ido-find-file-in-dir user-emacs-directory))
+;; Generic keymaps
+
+(general-def :states 'normal
+  "<tab>" '("Jump pairs" . evil-jump-item)
+  "TAB" '("Jump pairs" . evil-jump-item)
+  "<leader> e b" '("eval buffer" . eval-buffer)
+  "<leader> c c" '("compile" . compile)
+  "<leader> c r" '("recompile" . recompile))
+
+(general-def :states 'visual
+  "<leader> e r" '("eval region" . eval-region))
+
+
+
+
 
 ;; combine evil join and evil fill and move
 ;; (defun join-and-fill ()

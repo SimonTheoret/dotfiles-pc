@@ -1,21 +1,39 @@
-;; useful plugin
+;; Tree-sitter for emacs
 
-;; Tree-sitter
-(use-package tree-sitter
-  :init
-  (require 'tree-sitter))
+;; (defun tree-sitter-on ()
+;;   "Turns on tree-sitter in all its glory"
+;;   (turn-on-tree-sitter-mode)
+;;   (tree-sitter-hl-mode))
 
-(use-package tree-sitter-langs
-  :after tree-sitter)
+
+;; ;; Tree-sitter
+;; (use-package tree-sitter
+;;   :hook
+;;   (python-ts-mode . tree-sitter-on))
+;;   :config
+;;   (require 'tree-sitter-langs)
+
+;; (use-package tree-sitter-langs
+;;   :after tree-sitter)
 
 ;; (treesit-install-language-grammar 'rust)
 ;; (treesit-install-language-grammar 'go)
 ;; (treesit-install-language-grammar 'python)
 
-;; (setq major-mode-remap-alist
-;;   '((python-mode  . python-ts-mode))
+(setq major-mode-remap-alist
+  '((python-mode  . python-ts-mode)))
 ;;     ;; (rust-mode . rust-ts-mode)
 ;;     ;; (go-mode . go-ts-mode)))
 
-;; (global-tree-sitter-mode)
-;; (tree-sitter-hl-mode)
+
+
+
+(defun set-python-colors ()
+  (setq treesit-font-lock-feature-list
+	'((comment definition)
+	  (keyword string type)
+	  (assignment builtin constant decorator escape-sequence number string-interpolation function)
+	  (bracket delimiter operator variable property)))
+  (treesit-font-lock-recompute-features))
+
+(add-hook 'python-ts-mode-hook #'set-python-colors)

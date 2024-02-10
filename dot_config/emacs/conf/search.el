@@ -11,13 +11,19 @@
   ;; Show more candidates
   (setq vertico-count 15)
 
+  :general-config 
+  (:keymaps 'vertico-map
+	    "RET"  #'vertico-directory-enter
+	    "DEL"  #'vertico-directory-delete-char
+	    "M-DEL"  #'vertico-directory-delete-word
+	    )
+
   ;; Grow and shrink the Vertico minibuffer
   ;; (setq vertico-resize t)
 
   ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
   ;; (setq vertico-cycle t)
   )
-
 
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
@@ -61,7 +67,52 @@
 (use-package consult)
 
 (use-package marginalia
-  :init
+  :config
   (marginalia-mode))
 
-;; (use-package embark) ;; Add latere after customizing marginnalia
+(defun search-emacs-dir ()
+  (interactive)
+  (ido-find-file-in-dir user-emacs-directory))
+
+(general-def :states 'normal
+  "<leader> f f" '("find files" . ido-find-file)
+  "<leader> f p" '("search conf" . search-emacs-dir)
+  "<leader> s g" '("filter search current dir" . lgrep)
+  "<leader> s d" '("search current dir" . consult-ripgrep)
+  "<leader> s f" '("search file" . consult-fd)
+  )
+
+(use-package embark
+
+  :general
+  (general-def :states 'normal
+    "<leader> a a"  '("embark act" . embark-act     )    
+    "<leader> a d"  '("embark dwim" . embark-dwim    )    
+    ) ;; alternative for `describe-bindings'
+
+  :init
+
+  ;; Optionally replace the key help with a completing-read interface
+  (setq prefix-help-command #'embark-prefix-help-command)
+
+  ;; Show the Embark target at point via Eldoc. You may adjust the
+  ;; Eldoc strategy, if you want to see the documentation from
+  ;; multiple providers. Beware that using this can be a little
+  ;; jarring since the message shown in the minibuffer can be more
+  ;; than one line, causing the modeline to move up and down:
+
+  ;; (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+  ;; (setq eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
+
+  :config
+
+  ;; Hide the mode line of the Embark live/completions buffers
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
+
+;; Consult users will also want the embark-consult package.
+(use-package embark-consult
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))

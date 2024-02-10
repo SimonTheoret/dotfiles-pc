@@ -10,7 +10,7 @@
 ;; font
 ;; (set-frame-font "JetBrainsMono Nerd Font Mono 100" nil t)
 (add-to-list 'default-frame-alist
-	     '(font . "FiraCode Nerd Font-10"))
+	     '(font . "FiraCode Nerd Font-11"))
 
 ;; Scrolling
 (pixel-scroll-mode 1)

@@ -79,6 +79,12 @@
   (require 'org-roam-protocol))
 
 ;; Org mode starts folded
-(setq org-hide-block-startup t)
-(setq org-startup-folded t) ;; sets folding to overview (by setting t)
+(setq org-cycle-hide-block-startup t
+      org-startup-folded t) ;; sets folding to overview (by setting t)
 
+
+(general-def :states 'normal
+  "<leader> n l" #'org-store-link
+  "<leader> n l" #'org-agenda
+  "<leader> n l" #'org-capture
+)

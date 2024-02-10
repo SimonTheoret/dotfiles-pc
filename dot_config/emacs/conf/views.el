@@ -4,7 +4,7 @@
 ;; persperctive
 (use-package perspective
   :custom
-  (persp-mode-prefix-key (kbd "<leader> TAB"))
+  (persp-mode-prefix-key (kbd "<leader> <tab>"))
   :init
   (persp-mode))
 
