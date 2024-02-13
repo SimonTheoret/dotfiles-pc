@@ -38,7 +38,7 @@ alias cme='chezmoi edit'
 alias cmat='chezmoi add --template'
 alias icat='kitten icat'
 alias kdiff='kitten diff'
-alias gitg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+alias gitg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all --topo-order"
 alias gita="git add"
 alias gitc="git commit -m"
 alias gits="git status"

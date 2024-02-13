@@ -51,8 +51,6 @@ for_window [class="^.*"] border pixel 0
 # Start syncthing
 exec --no-startup-id syncthing --no-browser
 
-# Start emacs deamon
-exec --no-startup-id emacs --daemon
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -83,6 +81,8 @@ exec_always --no-startup-id "setxkbmap -layout ca multix"
 
 # start a terminal
 bindsym $mod+m exec kitty
+
+exec --no-startup-id emacs --daemon
 
 # start emacs
 bindsym $mod+w exec emacsclient -nc
