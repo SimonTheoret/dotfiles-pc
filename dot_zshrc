@@ -46,8 +46,8 @@ alias gitp="git push"
 
 
 # Visual and editor variables:
-export VISUAL='emacsclient -c -a ""'
-export EDITOR='emacsclient -c -a ""'
+export VISUAL='emacs -nw'
+export EDITOR='emacs -nw'
 
 #ruby :(
 export GEM_HOME="$HOME/.gem"
@@ -81,3 +81,6 @@ source /usr/share/fzf/completion.zsh
 # --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
 # --prompt='∼ ' --pointer='▶' --marker='✓'
 # --bind '?:toggle-preview'"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
