@@ -27,7 +27,6 @@
 
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 ;; LSP optimizations
 
