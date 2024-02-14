@@ -31,3 +31,5 @@
 (config-load-file-no-extension "prog") 
 (config-load-file-no-extension "undo") 
 (config-load-file-no-extension "pythonlang") 
+(config-load-file-no-extension "terminal") 
+(config-load-file-no-extension "check") 
