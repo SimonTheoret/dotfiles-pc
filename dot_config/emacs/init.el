@@ -30,3 +30,4 @@
 (config-load-file-no-extension "hooks") 
 (config-load-file-no-extension "prog") 
 (config-load-file-no-extension "undo") 
+(config-load-file-no-extension "pythonlang") 
