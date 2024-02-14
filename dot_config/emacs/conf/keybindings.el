@@ -40,6 +40,11 @@
 (use-package evil-easymotion
   :after evil)
 
+(use-package evil-snipe
+  :config
+  (evil-snipe-mode +1)
+  (evil-snipe-override-mode +1))
+
 ;; org evil 
 (use-package evil-org
   :after org
@@ -47,6 +52,7 @@
   :config
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
+
 
 
 (use-package which-key
@@ -60,8 +66,8 @@
   "<tab>" '("Jump pairs" . evil-jump-item)
   "TAB" '("Jump pairs" . evil-jump-item)
   "<leader> e b" '("eval buffer" . eval-buffer)
-  "<leader> c c" '("compile" . compile)
-  "<leader> c r" '("recompile" . recompile))
+  "<leader> c c c" '("compile" . compile)
+  "<leader> c c r" '("recompile" . recompile))
 
 (general-def :states 'visual
   "<leader> e r" '("eval region" . eval-region))

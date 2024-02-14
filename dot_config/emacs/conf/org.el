@@ -53,7 +53,11 @@
    (800 1000 1200 1400 1600 1800 2000)
    " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
  org-agenda-current-time-string
- "◀── now ─────────────────────────────────────────────────")
+ "◀── now ─────────────────────────────────────────────────"
+ org-cycle-hide-block-startup t
+ org-startup-folded t
+ org-startup-indented t
+ org-agenda-files '("~/org/agenda/agenda.org"))
 
 ;; Pretty indenting
 (add-hook 'org-mode-hook 'org-indent-mode)
@@ -78,9 +82,6 @@
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
 
-;; Org mode starts folded
-(setq org-cycle-hide-block-startup t
-      org-startup-folded t) ;; sets folding to overview (by setting t)
 
 
 (general-def :states 'normal

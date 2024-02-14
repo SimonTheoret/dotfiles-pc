@@ -21,8 +21,8 @@
 ;; (treesit-install-language-grammar 'python)
 
 (setq major-mode-remap-alist
-  '((python-mode  . python-ts-mode)))
-;;     ;; (rust-mode . rust-ts-mode)
+  '((python-mode  . python-ts-mode)
+    (rust-mode . rust-ts-mode)))
 ;;     ;; (go-mode . go-ts-mode)))
 
 
