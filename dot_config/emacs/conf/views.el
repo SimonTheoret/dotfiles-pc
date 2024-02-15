@@ -2,11 +2,17 @@
 
 
 ;; persperctive
-(use-package perspective
+(use-package persp-mode
   :custom
-  (persp-mode-prefix-key (kbd "<leader> <tab>"))
+  (persp-keymap-prefix (kbd "<leader> <tab>"))
+  (persp-auto-save-opt 0)
+  (persp-auto-resume-time -1)
   :init
   (persp-mode))
+
+(with-eval-after-load "persp-mode-autoloads"
+  (setq persp-autokill-buffer-on-remove 'kill-weak))
+
 
 ;; Not Needed. It is in the bottom right corner
 ;; (use-package perspective-tabs

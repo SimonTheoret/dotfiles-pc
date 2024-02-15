@@ -64,7 +64,6 @@
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 (use-package nerd-icons-ibuffer
-  :ensure t
   :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
 
 (use-package nerd-icons-completion

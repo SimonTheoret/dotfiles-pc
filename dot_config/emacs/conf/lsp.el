@@ -4,10 +4,9 @@
     (lsp-deferred)))
 
 (use-package lsp-mode
-  :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python--tsmode)
-         (python-ts-mode . lsp)
+         (python-mode . lsp)
          (rustic-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration)
@@ -25,12 +24,16 @@
 		   "<leader> c r r" '( "Rename" . lsp-rename	       )
 		   "<leader> c w r" '( "LSP Workspace remove" . lsp-workspace-folders-remove)
 		   "<leader> c w a" '( "LSP Workspace add" . lsp-workspace-folders-add)
-		   )
-  :config
+		   ))
+
+(with-eval-after-load 'lsp-mode
   (lsp-modeline-code-actions-mode)
   (setq lsp-headerline-breadcrumb-enable nil)
-  (setq lsp-modeline-diagnostics-enable t)
+  ;; :global/:workspace/:file
   (setq lsp-modeline-diagnostics-scope :workspace))
+  ;; :config
+  ;; (setq lsp-modeline-diagnostics-enable t)
+  ;; (setq lsp-modeline-diagnostics-scope :workspace))
 
 (use-package all-the-icons)
 
@@ -45,12 +48,13 @@
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-use-plists t))
 
-(add-hook 'lsp-mode 'lsp-optim )
+(add-hook 'lsp-mode-hook #'lsp-optim )
 
 ;; Python
 
 (use-package lsp-pyright
-  :ensure t
+  :init
+  (setq lsp-pyright-diagnostic-mode "workspace")
   :hook (python-ts-mode . (lambda ()
                          (require 'lsp-pyright)
                          (lsp))))  ; or lsp-deferred

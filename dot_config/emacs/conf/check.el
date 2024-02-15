@@ -1,12 +1,15 @@
 (use-package flycheck
   :hook
-  (after-init . global-flycheck-mode))
+  (after-init . global-flycheck-mode)) 
 
-(use-package consult-flycheck
+(use-package consult-lsp
   :general
   (general-def
     'normal
-    "<leader> c l" '("List errors". consult-flycheck)))
+    "<leader> c l" '("List diagnostics" . consult-lsp-diagnostics)
+    "<leader> s i" '("Search symbols in workspace" . consult-lsp-symbols)
+    "<leader> s j" '("Search symbol in file" . consult-lsp-file-symbols)
+    ))
 
 
 (custom-set-variables
