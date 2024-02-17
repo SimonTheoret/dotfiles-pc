@@ -4,6 +4,7 @@
   (let ((path (concat user-emacs-directory "conf/" content ".el")))
     (load(locate-user-emacs-file path))))
 
+
 ;; Immediate loading
 (add-to-list 'load-path (concat user-emacs-directory "conf/"))
 ;;--------- Does not require packages.el -----------;;
@@ -33,3 +34,4 @@
 (config-load-file-no-extension "pythonlang") 
 (config-load-file-no-extension "terminal") 
 (config-load-file-no-extension "check") 
+(config-load-file-no-extension "latexlang") 
