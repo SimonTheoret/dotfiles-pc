@@ -41,6 +41,8 @@
   :after evil)
 
 (use-package evil-snipe
+  :custom
+  (evil-snipe-smart-case t)
   :config
   (evil-snipe-mode +1)
   (evil-snipe-override-mode +1))
@@ -53,6 +55,7 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
+(use-package evil-magit)
 
 
 (use-package which-key

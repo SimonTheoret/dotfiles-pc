@@ -34,3 +34,5 @@
 (global-prettify-symbols-mode)
 
 
+;; elimiate 'file~'
+(setq make-backup-files nil)

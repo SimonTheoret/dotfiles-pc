@@ -8,7 +8,8 @@
   (persp-auto-save-opt 0)
   (persp-auto-resume-time -1)
   :init
-  (persp-mode))
+  (persp-mode)
+  (setq-default persp-nil-name "main"))
 
 (with-eval-after-load "persp-mode-autoloads"
   (setq persp-autokill-buffer-on-remove 'kill-weak))

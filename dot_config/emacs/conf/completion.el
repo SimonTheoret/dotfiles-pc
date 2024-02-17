@@ -47,10 +47,9 @@
 ;; Snippets
 (use-package yasnippet
   :init
-  (require 'yasnippet)
   (yas-global-mode 1)
-  :general-config
-  (general-def :states 'normal  "<leader> i s" '("Insert snippet" . #'yas-insert-snippet)))
+  :general
+  (general-def :states 'normal  "<leader> i s" '("Insert snippet" . yas-insert-snippet)))
 ;; :config
 ;; (evil-global-set-key 'normal (kbd "<leader> i s") 'yas-insert-snippet))
 

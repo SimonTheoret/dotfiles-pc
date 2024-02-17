@@ -17,7 +17,7 @@
   :after org
   :hook
   ((org-mode . org-modern-mode)
-  (org-agenda-finalize . org-modern-agenda)))
+   (org-agenda-finalize . org-modern-agenda)))
 
 ;; Prettify windows. Should be in looks.el ?
 ;; (modify-all-frames-parameters
@@ -57,12 +57,13 @@
  org-cycle-hide-block-startup t
  org-startup-folded t
  org-startup-indented t
- org-agenda-files '("~/org/agenda/agenda.org"))
+ org-agenda-files '("~/org/agenda/agenda.org")
+ org-directory '("~/org/agenda"))
 
 ;; Pretty indenting
 (add-hook 'org-mode-hook 'org-indent-mode)
 
-		 
+
 
 ;; org roam v2 
 (use-package org-roam
@@ -85,7 +86,38 @@
 
 
 (general-def :states 'normal
-  "<leader> n l" #'org-store-link
-  "<leader> n l" #'org-agenda
-  "<leader> n l" #'org-capture
-)
+  "<leader> n s l" '("Org store link" . org-store-link)
+  "<leader> n a a"   '("Org agenda" . org-agenda)
+  "<leader> n c c" '("Org capture" . org-capture)
+  "<return>" '("Follow link" . org-open-at-point)
+  )
+
+
+;; Org capture templates
+
+(add-to-list 'org-capture-templates '("r" "Évènements récurrents"
+                                      plain (file+headline "~/org/agenda/agenda.org" "Évènements récurrents")
+                                      "** %?%(org-insert-time-stamp nil nil nil nil nil \" +1w\")"))
+
+(add-to-list 'org-capture-templates '( "u" "Évènements uniques" plain (file+headline
+                                                                       "~/org/agenda/agenda.org" "Évènements uniques") "** %?%^T" ))
+
+(add-to-list 'org-capture-templates '( "t" "Tâches uniques" plain (file+headline
+                                                                   "~/org/agenda/agenda.org" "Tâches uniques") "** TODO %? DEADLINE: %^T" ))
+(add-to-list 'org-capture-templates '( "g" "Tâches récurrentes" plain
+                                       (file+headline "~/org/agenda/agenda.org" "Tâches récurrentes") "** TODO %? DEADLINE: %(org-insert-time-stamp nil nil nil nil nil \" +1w\")" ))
+
+(add-to-list 'org-capture-templates '( "e" "École" plain (file+headline
+                                                          "~/org/agenda/agenda.org" "École") "** TODO %? DEADLINE: %^t :école:"))
+
+(add-to-list 'org-capture-templates '( "i" "Inbox" plain (file+headline
+                                                          "~/org/todo.org" "Inbox") "** TODO %?" ))
+
+(add-to-list 'org-capture-templates '( "c" "Tâche contextuelles" plain (file+headline
+                                                                        "~/org/agenda/agenda.org" "Tâches contextuelles") "** %?" ))
+
+(add-to-list 'org-capture-templates '( "a" "Tâches en attentes" plain (file+headline
+                                                                       "~/org/agenda/agenda.org" "Tâches en attentes") "** %?" ))
+
+(add-to-list 'org-capture-templates '( "p" "Projets" plain (file+headline
+                                                            "~/org/agenda/agenda.org" "Projets") "** %?" ))

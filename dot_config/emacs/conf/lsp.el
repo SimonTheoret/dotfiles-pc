@@ -10,30 +10,33 @@
          (rustic-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration)
+	 (LaTeX-mode . lsp)
 	 )
   :commands lsp
   :general-config (general-def
-		   'normal
-		   "<leader> c d"   '( "Find definition" . lsp-find-definition)
-		   "<leader> c a"   '( "Execute action" . lsp-execute-code-action)
-		   "<leader> c i"   '( "Find implementation" . lsp-find-implementation)
-		   "<leader> c t"   '( "Find type def" . lsp-find-type-definition)
-		   "<leader> c D"   '( "Find declaration" . lsp-find-declaration)
-		   "<leader> c k"   '( "Find declaration" . lsp-describe-thing-at-point)
-		   "<leader> c r f" '( "Find reference" . lsp-ui-peek-find-references)
-		   "<leader> c r r" '( "Rename" . lsp-rename	       )
-		   "<leader> c w r" '( "LSP Workspace remove" . lsp-workspace-folders-remove)
-		   "<leader> c w a" '( "LSP Workspace add" . lsp-workspace-folders-add)
-		   ))
+		    'normal
+		    "<leader> c d"   '( "Find definition" . lsp-find-definition)
+		    "<leader> c a"   '( "Execute action" . lsp-execute-code-action)
+		    "<leader> c i"   '( "Find implementation" . lsp-find-implementation)
+		    "<leader> c t"   '( "Find type def" . lsp-find-type-definition)
+		    "<leader> c D"   '( "Find declaration" . lsp-find-declaration)
+		    "<leader> c k"   '( "Find declaration" . lsp-describe-thing-at-point)
+		    "<leader> c r f" '( "Find reference" . lsp-ui-peek-find-references)
+		    "<leader> c r r" '( "Rename" . lsp-rename	       )
+		    "<leader> c w r" '( "LSP Workspace remove" . lsp-workspace-folders-remove)
+		    "<leader> c w a" '( "LSP Workspace add" . lsp-workspace-folders-add)
+		    ))
 
 (with-eval-after-load 'lsp-mode
   (lsp-modeline-code-actions-mode)
   (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-lens-enable t)
+  (lsp-signature-mode t)
   ;; :global/:workspace/:file
   (setq lsp-modeline-diagnostics-scope :workspace))
-  ;; :config
-  ;; (setq lsp-modeline-diagnostics-enable t)
-  ;; (setq lsp-modeline-diagnostics-scope :workspace))
+;; :config
+;; (setq lsp-modeline-diagnostics-enable t)
+;; (setq lsp-modeline-diagnostics-scope :workspace))
 
 (use-package all-the-icons)
 
@@ -56,8 +59,8 @@
   :init
   (setq lsp-pyright-diagnostic-mode "workspace")
   :hook (python-ts-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp))))  ; or lsp-deferred
+                            (require 'lsp-pyright)
+                            (lsp))))  ; or lsp-deferred
 
 
 
@@ -67,4 +70,18 @@
   (setq-default lsp-rust-analyzer-cargo-watch-command "clippy")
   :custom
   (rustic-analyzer-command '("rustup" "run" "stable" "rust-analyzer")))
+
+
+
+;; Latex
+(use-package lsp-latex
+  :init
+  (setq lsp-latex-forward-search-executable "zathura")
+  (setq lsp-latex-forward-search-args '("--synctex-forward" "%l:1:%f" "%p"))
+  :hook
+  (tex-mode . lsp)
+  (latex-mode . lsp)
+  (LaTeX-mode . lsp))
+
+
 

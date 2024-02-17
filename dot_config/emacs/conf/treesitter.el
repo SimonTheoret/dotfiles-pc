@@ -36,4 +36,4 @@
 	  (bracket delimiter operator variable property)))
   (treesit-font-lock-recompute-features))
 
-(add-hook 'python-ts-mode-hook #'set-python-colors)
+(add-hook 'python-mode-hook #'set-python-colors)
