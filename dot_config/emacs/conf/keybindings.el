@@ -65,16 +65,11 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
-;; easy-motion for moving fast af
-(use-package evil-easymotion
-  :init
-  (evilem-default-keybindings "<leader>"))
-
 (use-package
   which-key
   :config (which-key-mode) (setq which-key-idle-delay 0.2))
 
-;; Generic keymaps
+
 
 (general-def
   :states
