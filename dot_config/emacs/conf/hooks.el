@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 ;; Nice Hooks bro
 
 

@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 ;; Debug to add bugs
 
 (use-package dap-mode)

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; ALL THE RESULTS
 
 ;; Enable vertico
@@ -65,6 +67,8 @@
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package consult)
+
+(use-package consult-todo :after consult)
 
 (use-package marginalia
   :config

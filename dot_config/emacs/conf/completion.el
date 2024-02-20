@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 ; Makes emacs write code in my place
 
 ;; Company Completion

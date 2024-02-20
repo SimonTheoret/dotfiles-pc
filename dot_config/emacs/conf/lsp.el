@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (defun dotfiles--lsp-deferred-if-supported ()
   "Run `lsp-deferred' if it's a supported mode."
   (unless (derived-mode-p 'emacs-lisp-mode)
@@ -6,15 +8,15 @@
 (use-package lsp-mode
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python--tsmode)
-         (python-mode . lsp)
-         (rustic-mode . lsp)
+         (python-ts-mode . lsp)
+         (rust-ts-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration)
 	 (LaTeX-mode . lsp)
 	 )
   :commands lsp
   :general-config (general-def
-		    'normal
+		    :states 'normal
 		    "<leader> c d"   '( "Find definition" . lsp-find-definition)
 		    "<leader> c a"   '( "Execute action" . lsp-execute-code-action)
 		    "<leader> c i"   '( "Find implementation" . lsp-find-implementation)
@@ -58,6 +60,7 @@
 (use-package lsp-pyright
   :init
   (setq lsp-pyright-diagnostic-mode "workspace")
+  (setq lsp-pyright-typechecking-mode "basic")
   :hook (python-ts-mode . (lambda ()
                             (require 'lsp-pyright)
                             (lsp))))  ; or lsp-deferred

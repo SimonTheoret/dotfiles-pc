@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; Tree-sitter for emacs
 
 ;; (defun tree-sitter-on ()

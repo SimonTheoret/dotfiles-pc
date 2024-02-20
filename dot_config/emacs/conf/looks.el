@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 ;; Makes emacs good looking
 
 ;; Smooth scrolling

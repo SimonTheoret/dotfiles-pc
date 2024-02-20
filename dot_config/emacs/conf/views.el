@@ -1,15 +1,33 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; Managing perspectives/views
 
 
-;; persperctive
-(use-package persp-mode
-  :custom
-  (persp-keymap-prefix (kbd "<leader> <tab>"))
-  (persp-auto-save-opt 0)
-  (persp-auto-resume-time -1)
-  :init
-  (persp-mode)
-  (setq-default persp-nil-name "main"))
+;; perspective
+(use-package
+ perspective
+ :custom
+ (persp-mode-prefix-key (kbd "<leader> <tab>")) ; pick your own prefix key here
+ :init (persp-mode))
+
+;;nameframe
+(use-package
+ nameframe
+ :after perspective
+ :config
+ (nameframe-projectile-mode t)
+ (nameframe-perspective-mode t))
+
+;; persp-mode
+;; (use-package
+;;  persp-mode
+;;  :custom
+;;  (persp-keymap-prefix (kbd "<leader> <tab>"))
+;;  (persp-auto-save-opt 0)
+;;  (persp-auto-resume-time -1)
+;;  (persp-nil-name "main")
+;;  :init (persp-mode))
+;; (setq-default persp-nil-name "main"))
 
 (with-eval-after-load "persp-mode-autoloads"
   (setq persp-autokill-buffer-on-remove 'kill-weak))
@@ -21,5 +39,3 @@
 ;;   :straight (:host sourcehut :repo "woozong/perspective-tabs")
 ;;   :init
 ;;   (perspective-tabs-mode +1))
-
-

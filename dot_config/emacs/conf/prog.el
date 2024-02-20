@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 
 ;; highlight symbol
 ;; (use-package highlight-thing

@@ -1,6 +1,10 @@
+;;; -*- lexical-binding: t; -*-
+
 (use-package flycheck
+  :custom
+  (flycheck-highlighting-mode nil)
   :hook
-  (after-init . global-flycheck-mode)) 
+  (lsp-mode . flycheck-mode)) 
 
 (use-package consult-lsp
   :general
@@ -11,16 +15,12 @@
     "<leader> s j" '("Search symbol in file" . consult-lsp-file-symbols)
     ))
 
+(use-package flycheck-hl-todo
+  :defer 5 ; Need to be initialized after the rest of checkers
+  :straight (:host github :repo "alvarogonzalezsotillo/flycheck-hl-todo")
+  :config
+  (flycheck-hl-todo-setup))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(flycheck-highlighting-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(use-package hl-todo
+  :init
+  (global-hl-todo-mode))

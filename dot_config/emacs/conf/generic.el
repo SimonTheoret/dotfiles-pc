@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 ;; Generic goodies
 
 (setq inhibit-startup-message t)
@@ -9,8 +12,7 @@
 
 ;; font
 ;; (set-frame-font "JetBrainsMono Nerd Font Mono 100" nil t)
-(add-to-list 'default-frame-alist
-	     '(font . "FiraCode Nerd Font-11"))
+(add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-11"))
 
 ;; Scrolling
 (pixel-scroll-mode 1)
@@ -18,7 +20,7 @@
 (setq scroll-conservatively 10000)
 
 
-(setq blink-cursor-mode	t)
+(setq blink-cursor-mode t)
 ;; (setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ;; Display relative line numbers in every buffer

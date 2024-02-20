@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 (general-def
   :states 'normal
   "<leader> b i" '("Ibuffer" . ibuffer)

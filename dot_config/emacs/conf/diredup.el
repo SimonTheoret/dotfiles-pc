@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 ;; Makes dired goooood
 
 (use-package diff-hl
