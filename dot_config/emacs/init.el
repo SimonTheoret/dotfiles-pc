@@ -1,3 +1,6 @@
+;;; -*- lexical-binding: t; -*-
+
+
 ; loading function
 (defun config-load-file-no-extension (content)
   "Loads and runs the file contained in the directory user-emacs-directory/conf"
@@ -35,3 +38,5 @@
 (config-load-file-no-extension "terminal") 
 (config-load-file-no-extension "check") 
 (config-load-file-no-extension "latexlang") 
+(config-load-file-no-extension "shellenv") 
+(config-load-file-no-extension "format") 
