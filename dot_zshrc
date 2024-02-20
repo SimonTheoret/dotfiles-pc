@@ -17,6 +17,9 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# Make pipenv install the venv next to the Pipfile
+export PIPENV_VENV_IN_PROJECT=1
+
 
 # Aliases for some common commands (don't forget to add its 'old' counterpart):
 alias ls='eza --icons'
