@@ -17,7 +17,7 @@
   :commands lsp
   :general-config (general-def
 		    :states 'normal
-		    "<leader> c d"   '( "Find definition" . lsp-ui-peek-find-definitions)
+		    "<leader> c d"   '( "Find definition" . lsp-find-definition)
 		    "<leader> c a"   '( "Execute action" . lsp-execute-code-action)
 		    "<leader> c i"   '( "Find implementation" . lsp-find-implementation)
 		    "<leader> c t"   '( "Find type def" . lsp-find-type-definition)

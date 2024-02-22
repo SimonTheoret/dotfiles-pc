@@ -70,7 +70,6 @@
   :config (which-key-mode) (setq which-key-idle-delay 0.2))
 
 
-
 (general-def
   :states
   'normal
