@@ -35,9 +35,9 @@ vmap.set("n", "<leader>cd", ":cd %:h<CR>", { desc = "Make file's path as working
 
 vmap.set("n", "<tab>", "%", { desc = "Switch delimiters" })
 
-vmap.set("n", "<leader>cc", function() require("simon.compilua").compilua() end, {desc = "Fast compile"})
+vmap.set("n", "<leader>cc", function() require("simon.compilua").compilua() end, { desc = "Fast compile" })
 
-vmap.set("n", "<leader>sr", function() require("simon.neosearch").search() end, {desc = "Search and replace"})
+vmap.set("n", "<leader>sr", function() require("simon.neosearch").search() end, { desc = "Search and replace" })
 
 function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
@@ -50,9 +50,15 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
-vmap.set("n", "<leader>cln", [[:%s/\s\+$//e<cr>]], {desc = "Clean trailing whitespaces"})
+vmap.set("n", "<leader>cln", [[:%s/\s\+$//e<cr>]], { desc = "Clean trailing whitespaces" })
 
-vim.api.nvim_set_keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], {desc = "Open link in browser"})
+vim.api.nvim_set_keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]],
+    { desc = "Open link in browser" })
 
+vmap.set("n", "<leader>na",
+    function()
+        vim.cmd('e' .. '~/org/agenda/agenda.md')
+    end,
+    { desc = "Open agenda" })
 
 -- Git signs
