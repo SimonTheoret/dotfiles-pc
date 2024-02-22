@@ -2,19 +2,18 @@
 
 
 (use-package
- pyvenv
- :hook
- (python-ts-mode . pyvenv-mode)
- (python-ts-mode . pyvenv-tracking-mode)
- ;; :config
- ;; (setq pyvenv-mode-line-indicator '(pyvenv-virtual-env-name ("[venv:" pyvenv-virtual-env-name "] ")))
- )
+  pyvenv
+  :hook
+  (python-ts-mode . pyvenv-mode)
+  (python-ts-mode . pyvenv-tracking-mode)
+  ;; :config
+  ;; (setq pyvenv-mode-line-indicator '(pyvenv-virtual-env-name ("[venv:" pyvenv-virtual-env-name "] ")))
+  )
 
-(use-package
- auto-virtualenv
- :hook (python-ts-mode . auto-virtualenv-set-virtualenv)
- (projectile-after-switch-project . auto-virtualenv-set-virtualenv) ;; If using projectile
- )
+(use-package pyenv-mode
+  :init
+  (pyenv-mode))
+
 
 (use-package pip-requirements)
 
@@ -25,8 +24,13 @@
     'company-backends '(company-anaconda :with company-capf)))
 
 (use-package
- pipenv
- :hook (python-ts-mode . pipenv-mode)
- :init
- (setq pipenv-projectile-after-switch-function
-       #'pipenv-projectile-after-switch-extended))
+  pipenv
+  :hook (python-ts-mode . pipenv-mode)
+  :init
+  (setq pipenv-projectile-after-switch-function
+	#'pipenv-projectile-after-switch-default))
+
+(use-package anaconda-mode
+  :hook
+  (python-ts-mode . anaconda-mode)
+  (python-ts-mode . anaconda-eldoc-mode))

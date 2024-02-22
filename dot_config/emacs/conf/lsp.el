@@ -30,10 +30,14 @@
 		    ))
 
 (with-eval-after-load 'lsp-mode
-  (lsp-modeline-code-actions-mode)
+  (setq lsp-ui-sideline-show-code-actions t)
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-lens-enable t)
   (lsp-signature-mode t)
+  ;; (lsp-ui-peek-enable)
+  ;; (lsp-ui-doc-enable)
+  (setq lsp-ui-doc-show-with-cursor t)
+  (setq lsp-ui-doc-position 'bottom)
   ;; :global/:workspace/:file
   (setq lsp-modeline-diagnostics-scope :workspace))
 ;; :config
@@ -58,9 +62,10 @@
 ;; Python
 
 (use-package lsp-pyright
+  :after lsp-mode
   :init
   (setq lsp-pyright-diagnostic-mode "workspace")
-  (setq lsp-pyright-typechecking-mode "basic")
+  (setq lsp-pyright-multi-root nil)
   :hook (python-ts-mode . (lambda ()
                             (require 'lsp-pyright)
                             (lsp))))  ; or lsp-deferred
@@ -81,6 +86,8 @@
   :init
   (setq lsp-latex-forward-search-executable "zathura")
   (setq lsp-latex-forward-search-args '("--synctex-forward" "%l:1:%f" "%p"))
+  :config
+  (add-to-list 'lsp-file-watch-ignored-directories '".venv/**")
   :hook
   (tex-mode . lsp)
   (latex-mode . lsp)

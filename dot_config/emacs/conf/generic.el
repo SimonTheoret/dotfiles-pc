@@ -23,10 +23,9 @@
 (setq blink-cursor-mode t)
 ;; (setq scroll-step 1) ;; keyboard scroll one line at a time
 
-;; Display relative line numbers in every buffer
-(global-display-line-numbers-mode t)
-
-(setq display-line-numbers-type 'relative)
+;; Display relative line numbers in every buffer 
+;; (global-display-line-numbers-mode nil)
+;; (setq display-line-numbers-type 'relative)
 
 ;; Electric defaults
 (electric-pair-mode t)
@@ -35,6 +34,15 @@
 ;; Nice greek symbols
 (global-prettify-symbols-mode)
 
+(setq confirm-kill-emacs #'yes-or-no-p)
+
+;; The variable redisplay-dont-pause, when set to t, will cause Emacs
+;; to fully redraw the display before it processes queued input
+;; events. This may have slight performance implications if you’re
+;; aggressively mouse scrolling a document or rely on your keyboard’s
+;; auto repeat feature. For most of us, myself included, it’s probably
+;; a no-brainer to switch it on.
+(setq redisplay-dont-pause t)
 
 ;; elimiate 'file~'
 (setq make-backup-files nil)
