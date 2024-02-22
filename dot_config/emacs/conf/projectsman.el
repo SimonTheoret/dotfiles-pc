@@ -15,3 +15,4 @@
     "<leader> p p" '("Project Switch project" . projectile-switch-project)
     "<leader> p a" '("Project Add project" . projectile-add-known-project)
     "<leader> p d" '("Project Remove project" . projectile-remove-known-project)))
+

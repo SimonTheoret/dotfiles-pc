@@ -1,4 +1,4 @@
-;; -*- lexical-binding: t -*-
+;; -*- lexical-binding: t -*- 
 
 (defun dotfiles--lsp-deferred-if-supported ()
   "Run `lsp-deferred' if it's a supported mode."
@@ -86,8 +86,6 @@
   :init
   (setq lsp-latex-forward-search-executable "zathura")
   (setq lsp-latex-forward-search-args '("--synctex-forward" "%l:1:%f" "%p"))
-  :config
-  (add-to-list 'lsp-file-watch-ignored-directories '".venv/**")
   :hook
   (tex-mode . lsp)
   (latex-mode . lsp)
