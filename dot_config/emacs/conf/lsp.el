@@ -1,4 +1,4 @@
-;; -*- lexical-binding: t -*- 
+;; -*- lexical-binding: t -*-
 
 (defun dotfiles--lsp-deferred-if-supported ()
   "Run `lsp-deferred' if it's a supported mode."
@@ -96,6 +96,7 @@
 
 
 ;; Latex
+<<<<<<< HEAD
 (use-package
   lsp-latex
   :init (setq lsp-latex-forward-search-executable "zathura")
@@ -109,6 +110,11 @@
   (setq-default lsp-go-use-gofumpt t))
 
 (use-package go-guru
+=======
+(use-package lsp-latex
+  :init
+  (setq lsp-latex-forward-search-executable "zathura")
+  (setq lsp-latex-forward-search-args '("--synctex-forward" "%l:1:%f" "%p"))
   :hook
   (go-mode . go-guru-hl-identifier-mode))
 
@@ -119,5 +125,5 @@
 (use-package flycheck-golangci-lint
   :hook (go-mode . flycheck-golangci-lint-setup))
 
-(eval-after-load 'flycheck                                       
+(eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-golangci-lint-setup))
