@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;; Package init
 
 (defvar bootstrap-version)
