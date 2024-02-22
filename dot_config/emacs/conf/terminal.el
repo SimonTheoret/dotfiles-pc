@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 
 (use-package vterm
@@ -29,3 +29,4 @@
   (general-def
     :states 'normal
     "<leader> t t" '("Toggle vterm" . vterm-toggle-cd)))
+

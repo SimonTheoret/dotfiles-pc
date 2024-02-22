@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 
 (general-def
@@ -10,3 +10,4 @@
 (use-package popwin
   :config
   (popwin-mode 1))
+

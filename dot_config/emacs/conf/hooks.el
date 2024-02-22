@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 
 ;; Nice Hooks bro
@@ -14,3 +14,4 @@
 
 (add-hook 'prog-mode-hook 'deactivate-word-wrap)
 (add-hook 'org-mode-hook 'deactivate-word-wrap)
+

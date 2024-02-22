@@ -1,11 +1,11 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 ;; Projects manager
 
 ;; projectile
 (use-package
   projectile
-  :config (projectile-mode +1) (setq projectile-project-search-path '("~/Documents" "~/org" "~/.config"))
+  :config (projectile-mode +1) (setq projectile-project-search-path '("~/Documents"))
   :general-config
   (general-def
     :states

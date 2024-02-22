@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 (use-package
  exec-path-from-shell
@@ -7,3 +7,4 @@
    (exec-path-from-shell-initialize))
  (when (daemonp)
   (exec-path-from-shell-initialize)))
+

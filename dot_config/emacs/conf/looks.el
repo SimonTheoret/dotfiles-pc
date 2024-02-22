@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 
 ;; Makes emacs good looking
@@ -90,3 +90,4 @@
                                        "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
   
   (global-ligature-mode 't))
+

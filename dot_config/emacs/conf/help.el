@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 
 (use-package helpful
@@ -11,3 +11,4 @@
    "C-h F"   '("help function" . helpful-function)
    )
   )
+

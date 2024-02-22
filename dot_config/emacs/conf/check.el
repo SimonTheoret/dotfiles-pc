@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 (use-package flycheck
   :custom
@@ -24,3 +24,4 @@
 (use-package hl-todo
   :init
   (global-hl-todo-mode))
+

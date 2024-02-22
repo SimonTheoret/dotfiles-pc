@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 (use-package tex
   :straight auctex
@@ -26,3 +26,4 @@
   :hook
   (LaTeX-mode . cdlatex-mode)
   (org-mode . org-cdlatex-mode))
+

@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 
 ;; Generic goodies
@@ -12,7 +12,11 @@
 
 ;; font
 ;; (set-frame-font "JetBrainsMono Nerd Font Mono 100" nil t)
-(add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-11"))
+(if (string= "laptop" (system-name))
+    (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-9"))
+    (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-11")))
+
+;; (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-11"))
 
 ;; Scrolling
 (pixel-scroll-mode 1)

@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 ;; Tree-sitter for emacs
 
@@ -39,3 +39,4 @@
   (treesit-font-lock-recompute-features))
 
 (add-hook 'python-mode-hook #'set-python-colors)
+

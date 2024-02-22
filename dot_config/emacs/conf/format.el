@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*- 
+
 (use-package apheleia :init (apheleia-global-mode +1)
   :config
   (setf (alist-get 'isort apheleia-formatters)
@@ -11,4 +13,3 @@
           "88"))
   (setf (alist-get 'python-mode apheleia-mode-alist)
 	'(isort flake8 black)))
-;; '(black)))

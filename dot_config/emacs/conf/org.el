@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 ;;;;;;;;; org-mode ;;;;;;;;
 
@@ -191,3 +191,4 @@
     plain
     (file+headline "~/org/agenda/agenda.org" "Projets")
     "** %?")))
+

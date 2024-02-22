@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 
 ;; git magic!
@@ -18,3 +18,4 @@
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh) ;;compatibility with diff-hl
 
 (use-package magit-todos :after magit :config (magit-todos-mode 1))
+

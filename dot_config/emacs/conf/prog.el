@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t -*- 
 
 ;; highlight symbol
 ;; (use-package highlight-thing
@@ -16,3 +16,4 @@
   (python-ts-mode . highlight-indent-guides-mode)
   :config
   (setq highlight-indent-guides-method 'character))
+
