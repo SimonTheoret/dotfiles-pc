@@ -52,4 +52,7 @@ end
 vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
 vmap.set("n", "<leader>cln", [[:%s/\s\+$//e<cr>]], {desc = "Clean trailing whitespaces"})
 
+vim.api.nvim_set_keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], {desc = "Open link in browser"})
+
+
 -- Git signs

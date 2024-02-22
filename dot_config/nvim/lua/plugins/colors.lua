@@ -31,7 +31,16 @@ return {
         vim.g.sonokai_style = "default"
         vim.g.sonokai_float_style = "dim"
         vim.g.sonokai_better_performance = true
-        vim.g.sonokai_enable_italic = true
+        vim.g.sonokai_enable_italic = false
         vim.cmd [[colorscheme sonokai]]
     end
 }
+-- return {
+--     'ofirgall/ofirkai.nvim',
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require('ofirkai').setup {
+--         }
+--     end
+-- }
