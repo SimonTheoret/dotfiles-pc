@@ -14,13 +14,8 @@ user-emacs-directory/conf/*.el --force`"
           user-emacs-directory
           "conf/*.el"
           " --force")))
-    (setq async-shell-command-buffer "new-buffer")
-    (async-shell-command first-cmd-string nil)
-    (async-shell-command second-cmd-string nil)
-    ;; (setq async-shell-command-buffer "confirm-new-buffer")
+    (setq shell-command-buffer "new-buffer")
+    (shell-command first-cmd-string nil)
+    (shell-command second-cmd-string nil)
+    (setq shell-command-buffer "confirm-new-buffer")
     ))
-
-
-;; new macro for updating a varialbe and switching it right after the
-;; execution. Is it defadvice??
-
