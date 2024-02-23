@@ -55,12 +55,11 @@
 
 
 (use-package
- org-modern
- :after org
- :hook
- ((org-mode . org-modern-mode)
-  (org-agenda-finalize . org-modern-agenda)
-  ))
+  org-modern
+  :after org
+  :hook
+  ((org-mode . org-modern-mode)
+   (org-agenda-finalize . org-modern-agenda)))
 
 ;; Prettify windows. Should be in looks.el ?
 ;; (modify-all-frames-parameters
@@ -76,67 +75,76 @@
 
 ;; org roam v2 
 (use-package
- org-roam
- :custom (org-roam-directory (file-truename "~/org/roam"))
- :bind
- (("<leader> n r l" . org-roam-buffer-toggle)
-  ("<leader> n r f" . org-roam-node-find)
-  ("<leader> n r g" . org-roam-graph)
-  ("<leader> n r i" . org-roam-node-insert)
-  ("<leader> n r c" . org-roam-capture)
-  ;; Dailies
-  ("<leader> n r j" . org-roam-dailies-capture-today))
- :config
- ;; If you're using a vertical completion framework, you might want a more informative completion interface
- (setq org-roam-node-display-template
-       (concat
-        "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
- (org-roam-db-autosync-mode)
- ;; If using org-roam-protocol
- (require 'org-roam-protocol))
+  org-roam
+  :custom (org-roam-directory (file-truename "~/org/roam"))
+  :general
+  (general-def
+    
+    :states 'normal
+
+    "<leader> n r l"
+    '("Roam buffer toggle" . org-roam-buffer-toggle)
+    "<leader> n r f"
+    '("Roam find node" . org-roam-node-find)
+    "<leader> n r g"
+    '("Roam graph" . org-roam-graph)
+    "<leader> n r i"
+    '("Roam insert node " . org-roam-node-insert)
+    "<leader> n r c"
+    '("Roam capture" . org-roam-capture)
+    "<leader> n r j"
+    '("Roam dailies capture " . org-roam-dailies-capture-today))
+  :config
+  ;; If you're using a vertical completion framework, you might want a more informative completion interface
+  (setq org-roam-node-display-template
+	(concat
+         "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode)
+  ;; If using org-roam-protocol
+  (require 'org-roam-protocol))
 
 
 (general-def
- :states
- 'normal
- "<leader> n a a"
- '("Org agenda" . org-agenda)
- "<leader> n c c"
- '("Org capture" . org-capture)
- "<leader> n a f"
- '("Org agenda file" . org-cycle-agenda-files))
+  :states
+  'normal
+  "<leader> n a a"
+  '("Org agenda" . org-agenda)
+  "<leader> n c c"
+  '("Org capture" . org-capture)
+  "<leader> n a f"
+  '("Org agenda file" . org-cycle-agenda-files))
 
 
 (general-def
- :states 'normal
- :keymaps 'org-mode-map
+  :states 'normal
+  :keymaps 'org-mode-map
 
- ;; Org nodes
- "<leader> m n n"
- '("New node" . org-id-get-create)
- ;; Toggling
- "<leader> m t c"
- '("Toggle checkbox" . org-toggle-checkbox)
- "<leader> m t h"
- '("Toggle heading" . org-toggle-heading)
- "<leader> m t i"
- '("Toggle item" . org-toggle-item)
- ;; Archive
- "<leader> m a d"
- '("Archive subtree" . org-archive-subtree-default)
- ;; Ctrl-c ctrl-c magic
- "<leader> m c c"
- '("Org ctrl-c" . org-ctrl-c-ctrl-c)
- ;; Links
- "<leader> m l s"
- '("Org store link" . org-store-link)
- "<leader> m l i"
- '("Org store link" . org-insert-link)
- "<return>"
- '("Follow link" . org-open-at-point)
- ;; Latex
- "<leader> m m p"
- '("Org store link" . org-latex-preview))
+  ;; Org nodes
+  "<leader> m n n"
+  '("New node" . org-id-get-create)
+  ;; Toggling
+  "<leader> m t c"
+  '("Toggle checkbox" . org-toggle-checkbox)
+  "<leader> m t h"
+  '("Toggle heading" . org-toggle-heading)
+  "<leader> m t i"
+  '("Toggle item" . org-toggle-item)
+  ;; Archive
+  "<leader> m a d"
+  '("Archive subtree" . org-archive-subtree-default)
+  ;; Ctrl-c ctrl-c magic
+  "<leader> m c c"
+  '("Org ctrl-c" . org-ctrl-c-ctrl-c)
+  ;; Links
+  "<leader> m l s"
+  '("Org store link" . org-store-link)
+  "<leader> m l i"
+  '("Org store link" . org-insert-link)
+  "<return>"
+  '("Follow link" . org-open-at-point)
+  ;; Latex
+  "<leader> m m p"
+  '("Org store link" . org-latex-preview))
 
 
 ;; Org capture templates
@@ -191,4 +199,3 @@
     plain
     (file+headline "~/org/agenda/agenda.org" "Projets")
     "** %?")))
-
