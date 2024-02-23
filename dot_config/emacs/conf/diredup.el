@@ -18,3 +18,21 @@
 
 ;; (use-package dirvish)
 ;; (dirvish-override-dired-mode)
+
+
+(defun search-emacs-dir ()
+  (interactive)
+  (ido-find-file-in-dir user-emacs-directory))
+
+(general-def
+  :states
+  'normal
+  "<leader> f f"
+  '("Find files" . ido-find-file)
+  "<leader> f p"
+  '("Search conf" . search-emacs-dir)
+  "<leader> f d"
+  '("Create dir" . ido-make-directory)
+  "<leader> f D"
+  '("Delete directory" . delete-directory)
+  )
