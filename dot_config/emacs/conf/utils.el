@@ -17,7 +17,7 @@ user-emacs-directory/conf/*.el --force`"
     (setq async-shell-command-buffer "new-buffer")
     (async-shell-command first-cmd-string nil)
     (async-shell-command second-cmd-string nil)
-    (setq async-shell-command-buffer "confirm-new-buffer")
+    ;; (setq async-shell-command-buffer "confirm-new-buffer")
     ))
 
 
