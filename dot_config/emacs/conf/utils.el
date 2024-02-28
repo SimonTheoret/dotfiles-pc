@@ -19,8 +19,11 @@ user-emacs-directory/conf/*.el --force`"
     (shell-command second-cmd-string nil)
     (setq shell-command-buffer "confirm-new-buffer")))
 
-;; (defun utils-create-directory (str)
+;; (defun utils-create-directory (dirstr)
 ;;   "Create directory from current directory with a command from the
 ;; shell."
-;;   (interactive (concat "sMake directory: " default-directory)
-;; 	       (shell-command (concat "mkdir" default-directory "/" str))))
+;;   (interactive
+;;    (concat "sMake directory: " default-directory))
+;;   ;; (shell-command (concat "mkdir" default-directory "/" str)
+;;   (message "%s" (concat "mkdir" default-directory "/" dirstr)
+;; 	   ))

@@ -37,9 +37,7 @@
    "L"
    '("Next arg" . evil-forward-arg)
    "H"
-   '("Previous arg" . evil-backward-arg)
-   "K"
-   '("Out of args" . evil-jump-out-args))
+   '("Previous arg" . evil-backward-arg))
   (:states
    'motion
    "L"

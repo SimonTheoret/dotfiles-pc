@@ -23,20 +23,23 @@
 ;; (treesit-install-language-grammar 'python)
 
 (setq major-mode-remap-alist
-  '((python-mode  . python-ts-mode)
-    (rust-mode . rust-ts-mode)))
-;;     ;; (go-mode . go-ts-mode)))
-
-
+      '((python-mode . python-ts-mode) (rust-mode . rust-ts-mode)
+	(go-mode . go-ts-mode)))
 
 
 (defun set-python-colors ()
   (setq treesit-font-lock-feature-list
-	'((comment definition)
-	  (keyword string type)
-	  (assignment builtin constant decorator escape-sequence number string-interpolation function)
-	  (bracket delimiter operator variable property)))
+        '((comment definition)
+          (keyword string type)
+          (assignment
+           builtin
+           constant
+           decorator
+           escape-sequence
+           number
+           string-interpolation
+           function)
+          (bracket delimiter operator variable property)))
   (treesit-font-lock-recompute-features))
 
 (add-hook 'python-mode-hook #'set-python-colors)
-

@@ -11,7 +11,9 @@
   :hook
   ( LaTeX-mode . visual-line-mode)
   ( LaTeX-mode . flyspell-mode)
-  ( LaTeX-mode . LaTeX-math-mode))
+  ( LaTeX-mode . LaTeX-math-mode)
+  ;; () 
+  )
 
 ;; (use-package auctex-latexmk
 ;;   :after latex
@@ -26,4 +28,3 @@
   :hook
   (LaTeX-mode . cdlatex-mode)
   (org-mode . org-cdlatex-mode))
-

@@ -32,7 +32,9 @@
   "<leader> f p"
   '("Search conf" . search-emacs-dir)
   "<leader> f d"
-  '("Create dir" . ido-make-directory)
+  '("Create dir" . make-directory)
   "<leader> f D"
   '("Delete directory" . delete-directory)
+  "<leader> f r"
+  '("Remove file" . delete-file)
   )

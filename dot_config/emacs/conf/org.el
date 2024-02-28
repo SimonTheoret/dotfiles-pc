@@ -79,7 +79,7 @@
   :custom (org-roam-directory (file-truename "~/org/roam"))
   :general
   (general-def
-    
+
     :states 'normal
 
     "<leader> n r l"
@@ -101,7 +101,16 @@
          "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
-  (require 'org-roam-protocol))
+  (require 'org-roam-protocol)
+  (setq org-roam-dailies-directory "org/daily")
+
+  (setq
+   org-roam-dailies-capture-templates
+   '(("d"
+      "default"
+      entry
+      "* %?"
+      :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")))))
 
 
 (general-def
