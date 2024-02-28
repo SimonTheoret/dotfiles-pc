@@ -9,7 +9,7 @@ return {
     config = function()
         require('barbecue').setup({
 
-            theme = "monokai-pro"
+            theme = Color_is
 
         })
     end

@@ -28,6 +28,7 @@ vim.opt.autoindent = true
 vim.opt.formatoptions = "tcqjron"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.foldlevel = 99
+vim.opt.indentkeys ="0{,0},0),0],:,0#,!^F,O,e"
 
 
 vim.opt.incsearch = true
