@@ -15,6 +15,7 @@ return {
         -- Set up cmp with lspconfig.
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+        -- python LSP
         lspconfig.pyright.setup {
             on_attach = on_attach,
             capabilities = capabilities,
@@ -22,7 +23,17 @@ return {
                 pyright = { autoImportCompletion = true, },
                 python = { analysis = { autoSearchPaths = true, diagnosticMode = "workspace" } }
             }
-        }                               -- python LSP
+        }
+        lspconfig.ruff_lsp.setup {
+            on_attach = on_attach,
+            init_options = {
+                settings = {
+                    -- Any extra CLI arguments for `ruff` goes here.
+                    args = {},
+                }
+            }
+        }
+
         lspconfig.rust_analyzer.setup { -- rust LSP
             -- Server-specific settings. See `:help lspconfig-setup`
             on_attach = on_attach,

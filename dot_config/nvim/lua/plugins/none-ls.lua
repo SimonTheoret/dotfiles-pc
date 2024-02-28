@@ -14,22 +14,19 @@ return {
                 null_ls.builtins.diagnostics.golangci_lint,
                 null_ls.builtins.code_actions.gomodifytags, -- modify tags easily
                 null_ls.builtins.code_actions.impl,         -- generate method stubs for interfaces implementation
-                -- rust
-                null_ls.builtins.formatting.rustfmt,
                 -- python
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.diagnostics.flake8.with({
-                    extra_args = {
-                        "--extend-ignore", "E203", "--max-line-length", "88"
-                    }
-                }),
+                -- null_ls.builtins.formatting.black,
+                -- null_ls.builtins.diagnostics.ruff.with({
+                --     extra_args = {
+                --         "--ignore", "E203", "--line-length", "88"
+                --     }
+                -- }),
                 null_ls.builtins.formatting.isort.with({
                     extra_args = {
                         "--profile", "black"
                     }
                 }),
                 -- markdown
-                null_ls.builtins.formatting.markdown_toc,
                 null_ls.builtins.formatting.mdformat,
             }
         })
