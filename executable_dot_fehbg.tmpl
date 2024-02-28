@@ -1,9 +1,9 @@
 #!/bin/sh
 {{if eq .chezmoi.hostname "laptop"}}
-feh --no-fehbg --bg-scale '/home/simon/Images/wallpapers/thorngat.jpg'
+feh --bg-scale '/home/simon/Images/wallpapers/thorngat.jpg'
 {{end}}
 
 {{if ne .chezmoi.hostname "laptop"}}
 # the order of images must be center monitor, right monitor, left monitor
-feh --no-fehbg --bg-scale
+feh --bg-scale ~/Images/wallpapers/thorngat.jpg ~/Images/wallpapers/right_mountains.jpg ~/Images/wallpapers/left_forest.jpg
 {{end}}
