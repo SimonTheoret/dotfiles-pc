@@ -1,8 +1,8 @@
 #!/bin/sh
-{{if eq .chez.hostname "laptop"}}
-feh --no-fehbg --bg-scale '/home/simon/Images/wallpapers/thorngat.jpg' 
+{{if eq .chezmoi.hostname "laptop"}}
+feh --no-fehbg --bg-scale '/home/simon/Images/wallpapers/thorngat.jpg'
 {{end}}
 
-{{if ne .chez.hostname "laptop"}}
-feh --no-fehbg --bg-scale 
+{{if ne .chezmoi.hostname "laptop"}}
+feh --no-fehbg --bg-scale
 {{end}}
