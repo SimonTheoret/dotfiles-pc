@@ -1,2 +1,8 @@
 #!/bin/sh
+{{if eq .chez.hostname "laptop"}}
 feh --no-fehbg --bg-scale '/home/simon/Images/wallpapers/thorngat.jpg' 
+{{end}}
+
+{{if ne .chez.hostname "laptop"}}
+feh --no-fehbg --bg-scale 
+{{end}}
