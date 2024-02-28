@@ -49,8 +49,7 @@ alias gitp="git push"
 
 
 # Visual and editor variables:
-export VISUAL='emacsclient -r -a "emacs"'
-export EDITOR='emacsclient -r -a "emacs"'
+export EDITOR='nvim'
 export BROWSER='google-chrome-stable'
 
 #ruby :(
