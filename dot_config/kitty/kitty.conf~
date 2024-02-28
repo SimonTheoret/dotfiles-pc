@@ -7,9 +7,9 @@ Fonts {{{
 #: characters.
 
 font_family      FiraCode Nerd Font
-bold_font        Fira Code Bold Nerd Font Complete
-italic_font      Victor Mono Medium Italic Nerd Font Complete
-bold_italic_font Victor Mono Bold Italic Nerd Font Complete
+bold_font        FiraCode Nerd Font
+italic_font      FiraCode Nerd Font
+bold_italic_font FiraCode Nerd Font
 
 #: YO::[Ojuuuuuuu:w] can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -2400,5 +2400,5 @@ map alt+r+t set_tab_title
 
 # BEGIN_KITTY_THEME
 # Monokai Soda
-include tokyonight_night.conf
+include current-theme.conf
 # END_KITTY_THEME
