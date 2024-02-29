@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 })
 
 
--- Add sheban in shell scripts
+-- Add shebang in shell scripts
 vim.api.nvim_create_autocmd({ "BufNewFile" }, {
     pattern = { "*.sh" },
     callback = function(_)

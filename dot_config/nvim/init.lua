@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath) -- do not touch
 vim.g.mapleader = " " -- leader key
 vim.g.maplocalleader = "m" -- local leader key
 
+vim.opt.cursorline = true
+
 vim.opt.relativenumber = true --relative numbers
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
