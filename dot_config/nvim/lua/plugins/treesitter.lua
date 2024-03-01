@@ -6,6 +6,7 @@ return {"nvim-treesitter/nvim-treesitter",
         auto_install = true,
         highlight = {
             enable = true,
+            disable = {"latex", "bibtex"}
         },
     })
     end

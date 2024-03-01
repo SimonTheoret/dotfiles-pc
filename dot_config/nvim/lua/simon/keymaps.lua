@@ -16,6 +16,10 @@ vmap.set("n", "<C-u>", "<C-u>zz")
 vmap.set("n", "n", "nzzzv")
 vmap.set("n", "N", "Nzzzv")
 
+-- Going down a page keeps the cursor centered
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- Copy the clipboard content into system clipboard
 vmap.set({ "n", "v" }, "<leader>y", [["+y]],
     { desc = "Copy clipboard into system clipboard" })
