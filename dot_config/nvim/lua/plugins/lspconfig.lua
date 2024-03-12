@@ -83,6 +83,10 @@ return {
         -- Latex Texlab
         lspconfig.texlab.setup({})
 
+
+        -- Latex marksman (markdown)
+        lspconfig.marksman.setup{}
+
         vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, { desc = "diagnostic" })
         vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, { desc = "loclist" })
 

@@ -1,3 +1,4 @@
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -12,9 +13,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath) -- do not touch
-vim.g.mapleader = " " -- leader key
-vim.g.maplocalleader = "m" -- local leader key
 
+vim.g.maplocalleader = "m" -- local leader key
+vim.g.mapleader = " " -- leader key
 vim.opt.cursorline = true
 
 vim.opt.relativenumber = true --relative numbers
